@@ -1,16 +1,12 @@
-//Output a prompt
-process.stdout.write('prompt > ');
+// requiring the ./pwd module which is exporting the function.
+const pwd = require('./pwd')
 
-// The stdin 'data' event fires after a user types in a line
-process.stdin.on('data', (data) => {
-    const cmd = data.toString().trim(); //remove the newline
+// running the pwd function with pwd as argument
+pwd(pwd)
 
-    process.stdout.write('You typed: ' + cmd);
-    process.stdout.write('\nprompt > ');
-});
+// requiring the ./ls module which is exporting the function
+const fs = require('./ls')
 
-console.log('hi')
+// running the fs function...no params?
+fs()
 
-console.log('ok')
-const add = (x) => x + x
-console.log(add(4))
